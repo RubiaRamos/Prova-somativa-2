@@ -1,0 +1,341 @@
+/* ===== Cores e fontes ===== */
+:root {
+  --noite: #0d1b2a;
+  --noite-clara: #1b2d44;
+  --ceu: #1b98e0;
+  --ambar: #ffb703;
+  --coral: #e63946;
+  --verde: #2a9d8f;
+  --papel: #ffffff;
+  --cinza: #6b7685;
+  --linha: #d9dee5;
+  --texto: #14202e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  background: var(--noite);
+  background-image: radial-gradient(circle at 20% 0%, #23405f 0%, transparent 55%);
+  color: var(--papel);
+  line-height: 1.5;
+}
+
+code {
+  font-family: Consolas, "Courier New", monospace;
+  background: rgba(27, 152, 224, 0.12);
+  color: #0b5f8f;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* ===== Cabeçalho ===== */
+.cabecalho {
+  text-align: center;
+  padding: 36px 16px 8px;
+}
+
+.cabecalho__curso {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ceu);
+}
+
+.cabecalho__titulo {
+  margin: 6px 0;
+  font-size: 2.8rem;
+  letter-spacing: 0.02em;
+}
+
+.cabecalho__info {
+  margin: 0;
+  color: #b8c4d3;
+}
+
+/* ===== Painel de voos (status) ===== */
+.painel {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 14px 20px;
+  border-radius: 10px;
+  background: #050b12;
+  font-family: Consolas, "Courier New", monospace;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  border: 2px solid #26384f;
+}
+
+.painel--erro {
+  color: var(--coral);
+  box-shadow: 0 0 18px rgba(230, 57, 70, 0.35);
+}
+
+.painel--ok {
+  color: #52d17c;
+  border-color: #52d17c;
+  box-shadow: 0 0 18px rgba(82, 209, 124, 0.4);
+}
+
+/* ===== Página ===== */
+.pagina {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px 56px;
+}
+
+/* ===== Cartão de embarque ===== */
+.bilhete {
+  display: flex;
+  background: var(--papel);
+  color: var(--texto);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.bilhete__principal {
+  flex: 3;
+  padding: 24px 28px;
+  border-top: 8px solid var(--ceu);
+}
+
+.bilhete__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.bilhete__companhia {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--ceu);
+}
+
+.bilhete__tipo {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cinza);
+}
+
+/* Rota */
+.rota {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 18px 0;
+}
+
+.rota__ponto {
+  display: flex;
+  flex-direction: column;
+}
+
+.rota__ponto--fim {
+  text-align: right;
+}
+
+.rota__sigla {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.rota__cidade {
+  color: var(--cinza);
+}
+
+.rota__aviao {
+  flex: 1;
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--ceu);
+  border-bottom: 2px dashed var(--linha);
+  margin: 0 18px 22px;
+}
+
+/* Campos */
+.campos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px 16px;
+}
+
+.campos__item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+  border-top: 1px solid var(--linha);
+}
+
+.campos__item--largo {
+  grid-column: span 4;
+}
+
+.campos__item small,
+.bilhete__canhoto small {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cinza);
+}
+
+.campos__item span {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.bilhete__mensagem {
+  margin: 18px 0 0;
+  padding: 10px 14px;
+  background: #eef7fd;
+  border-radius: 8px;
+  color: #0b5f8f;
+  font-style: italic;
+}
+
+/* Canhoto (parte destacável) */
+.bilhete__canhoto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 24px 22px;
+  background: #f4f7fa;
+  border-left: 3px dashed var(--linha);
+  border-top: 8px solid var(--ambar);
+}
+
+.bilhete__canhoto span {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.canhoto__reserva {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 1.4rem;
+  letter-spacing: 0.15em;
+}
+
+.canhoto__barras {
+  margin-top: auto;
+  height: 56px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--texto) 0 2px,
+    transparent 2px 4px,
+    var(--texto) 4px 7px,
+    transparent 7px 9px
+  );
+}
+
+/* ===== Instruções ===== */
+.instrucoes {
+  margin-top: 36px;
+}
+
+.instrucoes h2 {
+  margin: 0 0 10px;
+}
+
+.instrucoes__aviso,
+.instrucoes__entrega {
+  color: #d5dde7;
+}
+
+.instrucoes__aviso code,
+.instrucoes__entrega code {
+  background: rgba(255, 183, 3, 0.15);
+  color: var(--ambar);
+}
+
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.cartao {
+  background: var(--noite-clara);
+  border: 1px solid #2c4463;
+  border-radius: 14px;
+  padding: 18px;
+  color: #e4eaf1;
+}
+
+.cartao h3 {
+  margin: 8px 0;
+  color: var(--papel);
+}
+
+.cartao p,
+.cartao ul {
+  margin: 8px 0;
+}
+
+.cartao ul {
+  padding-left: 18px;
+}
+
+.cartao code {
+  background: rgba(27, 152, 224, 0.18);
+  color: #8fd3ff;
+}
+
+.cartao__etiqueta {
+  display: inline-block;
+  background: var(--ambar);
+  color: var(--noite);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+
+.cartao__alerta {
+  background: rgba(230, 57, 70, 0.15);
+  border-left: 4px solid var(--coral);
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+/* ===== Telas pequenas ===== */
+@media (max-width: 800px) {
+  .bilhete {
+    flex-direction: column;
+  }
+
+  .bilhete__canhoto {
+    border-left: none;
+    border-top: 3px dashed var(--linha);
+  }
+
+  .campos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .campos__item--largo {
+    grid-column: span 2;
+  }
+
+  .cartoes {
+    grid-template-columns: 1fr;
+  }
+
+  .cabecalho__titulo {
+    font-size: 2.1rem;
+  }
+}

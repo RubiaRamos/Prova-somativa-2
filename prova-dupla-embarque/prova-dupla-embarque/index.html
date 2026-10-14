@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prova em Dupla — Cartão de Embarque</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <p class="cabecalho__curso">Web Development: Front-End · JavaScript · Avaliação em dupla</p>
+    <h1 class="cabecalho__titulo">Cartão de Embarque</h1>
+    <p class="cabecalho__info">Sistema léxico · Duração: 2 horas · Valor: 10,0 pontos · Sem consulta · Em dupla</p>
+  </header>
+
+  <!-- PAINEL DE VOOS: o JS muda esta mensagem quando roda até o fim sem erros -->
+  <div id="status" class="painel painel--erro">
+    ✈ STATUS DO VOO: CÓDIGO COM ERROS · ABRA O CONSOLE (F12)
+  </div>
+
+  <main class="pagina">
+
+    <!-- CARTÃO DE EMBARQUE: os campos são preenchidos pelo arquivo js/prova.js -->
+    <section class="bilhete" aria-label="Cartão de embarque">
+
+      <div class="bilhete__principal">
+        <div class="bilhete__topo">
+          <span id="companhia" class="bilhete__companhia">Companhia aérea</span>
+          <span class="bilhete__tipo">Cartão de embarque</span>
+        </div>
+
+        <div class="rota">
+          <div class="rota__ponto">
+            <span id="origem" class="rota__sigla">—</span>
+            <span id="cidadeOrigem" class="rota__cidade">—</span>
+          </div>
+          <span class="rota__aviao" aria-hidden="true">✈</span>
+          <div class="rota__ponto rota__ponto--fim">
+            <span id="destino" class="rota__sigla">—</span>
+            <span id="cidadeDestino" class="rota__cidade">—</span>
+          </div>
+        </div>
+
+        <ul class="campos">
+          <li class="campos__item campos__item--largo"><small>Passageiro(a)</small><span id="passageiro">—</span></li>
+          <li class="campos__item"><small>Voo</small><span id="voo">—</span></li>
+          <li class="campos__item"><small>Data</small><span id="data">—</span></li>
+          <li class="campos__item"><small>Classe</small><span id="classe">—</span></li>
+          <li class="campos__item"><small>Portão</small><span id="portao">—</span></li>
+          <li class="campos__item"><small>Poltrona</small><span id="poltrona">—</span></li>
+          <li class="campos__item"><small>Embarque</small><span id="embarque">—</span></li>
+          <li class="campos__item"><small>Partida</small><span id="partida">—</span></li>
+        </ul>
+
+        <p id="mensagem" class="bilhete__mensagem">—</p>
+      </div>
+
+      <div class="bilhete__canhoto">
+        <small>Reserva</small>
+        <span id="reserva" class="canhoto__reserva">—</span>
+        <small>Trecho</small>
+        <span id="trecho">—</span>
+        <small>Bagagem</small>
+        <span id="bagagem">—</span>
+        <div class="canhoto__barras" aria-hidden="true"></div>
+      </div>
+
+    </section>
+
+    <!-- INSTRUÇÕES -->
+    <section class="instrucoes">
+      <h2>Instruções</h2>
+      <p class="instrucoes__aviso">Editem apenas <code>js/prova.js</code> e <code>js/questoes.js</code>.
+        Não alterem o HTML nem o CSS. A dupla trabalha em um único computador e entrega um único arquivo.</p>
+
+      <div class="cartoes">
+        <article class="cartao">
+          <span class="cartao__etiqueta">Parte 1 · 6,0 pts</span>
+          <h3>Caça aos erros</h3>
+          <p>O arquivo <code>js/prova.js</code> tem <strong>12 erros</strong>. Corrijam todos e escrevam,
+            ao lado de cada correção, <code>// CORRIGIDO: ...</code> explicando a regra quebrada.</p>
+          <p>Cada erro vale 0,5: 0,25 pela correção e 0,25 pela explicação.</p>
+          <p class="cartao__alerta"><strong>Atenção:</strong> 2 erros <strong>não</strong> aparecem no Console.
+            No final, nenhum campo do cartão pode mostrar <code>—</code> ou ficar com a informação incompleta.</p>
+        </article>
+
+        <article class="cartao">
+          <span class="cartao__etiqueta">Parte 2 · 1,5 pt</span>
+          <h3>Boas práticas</h3>
+          <ul>
+            <li><strong>Nomes (1,0):</strong> 4 nomes funcionam, mas fogem das convenções.
+              Renomeiem (inclusive onde são usados). Cuidado: nem todo nome diferente está errado.</li>
+            <li><strong>Cabeçalho (0,25):</strong> nome completo dos dois integrantes e a data.</li>
+            <li><strong>Comentários (0,25):</strong> um comentário de uma linha antes de cada bloco do código.</li>
+          </ul>
+        </article>
+
+        <article class="cartao">
+          <span class="cartao__etiqueta">Parte 3 · 2,5 pts</span>
+          <h3>Questões</h3>
+          <p>Respondam às <strong>5 questões</strong> do arquivo <code>js/questoes.js</code>,
+            escrevendo as respostas dentro dos comentários.</p>
+          <p>Quando a questão pedir código, escrevam o código completo, não só a explicação.</p>
+        </article>
+      </div>
+
+      <p class="instrucoes__entrega"><strong>Entrega:</strong> compactem a pasta em um <code>.zip/.rar</code>
+        com o nome da dupla (ex.: <code>prova-fulana-e-fulano.zip/.rar</code>).</p>
+    </section>
+  </main>
+
+  <script src="js/prova.js"></script>
+</body>
+</html>
